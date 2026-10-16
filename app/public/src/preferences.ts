@@ -80,7 +80,7 @@ const defaultPreferences: IPreferencesState = {
   colorblindMode: false,
   recordReplays: true,
   keepReplays: 5,
-  theme: "default",
+  theme: "gba",
   fpsLimit: MAX_CONFIG_FPS + 1,
   keybindings: {
     sell: "E",

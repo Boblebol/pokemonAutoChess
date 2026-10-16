@@ -1,0 +1,199 @@
+/* ==========================================================================
+   POKEMON GBA MINIMAL RETRO THEME
+   Inspired by Pokemon Emerald / FireRed GBA UI:
+   - High readability, straight-to-the-point layout
+   - Authentic GBA palette (parchment cream, deep navy, forest emerald, berry red)
+   - Pixel bevel dialog boxes (double borders & crisp pixel-art feel)
+   ========================================================================== */
+
+@font-face {
+  font-family: PokemonClassic;
+  src: url("/assets/ui/PokemonClassic.ttf") format("truetype");
+}
+
+:root {
+  /* GBA Palette */
+  --gba-parchment: #f8f8d8;
+  --gba-parchment-dark: #e0d8b8;
+  --gba-frame-dark: #181818;
+  --gba-frame-blue: #385890;
+  --gba-frame-light: #5880c0;
+  --gba-emerald: #187848;
+  --gba-ruby: #a02820;
+  --gba-amber: #e89828;
+
+  --color-bg-primary: #1e2838;
+  --color-bg-secondary: #283448;
+  --color-bg-tertiary: #18202c;
+  --color-bg-accent: #3888d8;
+  --color-bg-positive: #289050;
+  --color-bg-negative: #b03030;
+  --color-bg-gold: #d8a018;
+  --color-bg-input: #101824;
+
+  --color-fg-primary: #f8f8f8;
+  --color-fg-secondary: #b8c4d8;
+  --color-fg-invert: #181818;
+  --color-fg-accent: #58a8f8;
+  --color-fg-green: #48d878;
+  --color-fg-red: #f85858;
+  --color-fg-gold: #f8c838;
+  --color-fg-positive: #58f888;
+  --color-fg-negative: #f86868;
+
+  --border-thick: 3px solid #000;
+  --border-thin: 2px solid #000;
+  --border-extra-thin: 1px solid #000;
+  --shadow-clickable: #10141c 3px 3px 0px;
+}
+
+html {
+  font-family: PokemonClassic, "Courier New", monospace !important;
+  font-size: 13px !important;
+  image-rendering: pixelated;
+}
+
+body {
+  background-color: #121822 !important;
+  background-image: 
+    radial-gradient(#223048 15%, transparent 16%),
+    radial-gradient(#1a2436 15%, transparent 16%) !important;
+  background-size: 16px 16px !important;
+  background-position: 0 0, 8px 8px !important;
+}
+
+/* ==========================================================================
+   GBA BEVEL CONTAINERS & BOXES
+   ========================================================================== */
+.my-container {
+  border-radius: 4px !important;
+  border: 3px solid #10141c !important;
+  box-shadow: 
+    inset 2px 2px 0px #485c7c,
+    inset -2px -2px 0px #18202c,
+    0 4px 0px #0a0d14 !important;
+  background-color: #202b3a !important;
+}
+
+.my-box {
+  border-radius: 3px !important;
+  border: 2px solid #10141c !important;
+  box-shadow: 
+    inset 1px 1px 0px #485c7c,
+    inset -1px -1px 0px #141c26 !important;
+  background-color: #263345 !important;
+}
+
+/* ==========================================================================
+   GBA BUTTONS & CONTROLS (Straight-to-the-point)
+   ========================================================================== */
+.bubbly {
+  font-family: PokemonClassic, monospace !important;
+  font-size: 11px !important;
+  border-radius: 3px !important;
+  border: 2px solid #0a0d14 !important;
+  text-shadow: 1px 1px 0px #000 !important;
+  padding: 6px 14px !important;
+  background: #344865 !important;
+  box-shadow: 
+    inset 2px 2px 0px #58749c,
+    inset -2px -2px 0px #1c2636,
+    0 3px 0px #080a0f !important;
+  transition: transform 0.05s ease, background 0.1s ease !important;
+}
+
+.bubbly:hover:not([disabled]) {
+  background: #40587c !important;
+  cursor: pointer !important;
+}
+
+.bubbly:active:not([disabled]) {
+  transform: translateY(2px) !important;
+  box-shadow: 
+    inset 2px 2px 0px #1c2636,
+    inset -2px -2px 0px #58749c,
+    0 1px 0px #080a0f !important;
+}
+
+.bubbly.bubbly-green,
+button.refresh-button {
+  background: #206838 !important;
+  box-shadow: 
+    inset 2px 2px 0px #389858,
+    inset -2px -2px 0px #104020,
+    0 3px 0px #080a0f !important;
+}
+
+.bubbly.bubbly-red {
+  background: #882020 !important;
+  box-shadow: 
+    inset 2px 2px 0px #b83838,
+    inset -2px -2px 0px #581010,
+    0 3px 0px #080a0f !important;
+}
+
+/* ==========================================================================
+   MINIMAL BATTLE HUD & SHOP (Straight to the point)
+   ========================================================================== */
+.game-shop.my-container {
+  border-radius: 4px !important;
+  background-color: rgba(24, 32, 44, 0.94) !important;
+  border: 3px solid #0c1017 !important;
+  box-shadow: 
+    inset 2px 2px 0px #405470,
+    inset -2px -2px 0px #121822,
+    0 6px 12px rgba(0,0,0,0.6) !important;
+  padding: 6px 12px !important;
+}
+
+.game-pokemon-portrait {
+  border-radius: 3px !important;
+  border: 2px solid #0c1017 !important;
+  box-shadow: inset 1px 1px 0px rgba(255,255,255,0.15) !important;
+  image-rendering: pixelated !important;
+}
+
+.game-rarity-percentage.my-box {
+  border-radius: 3px !important;
+  border: 2px solid #0c1017 !important;
+  overflow: hidden !important;
+  font-size: 10px !important;
+}
+
+.game-experience .progress-bar,
+.progress-bar {
+  border-radius: 2px !important;
+  border: 2px solid #0c1017 !important;
+}
+
+/* ==========================================================================
+   SIDEBAR & MENUS
+   ========================================================================== */
+aside.sidebar {
+  border-right: 3px solid #0c1017 !important;
+  box-shadow: 3px 0 0px #1a2230 !important;
+}
+
+.react-tabs__tab {
+  font-family: PokemonClassic, monospace !important;
+  font-size: 10px !important;
+  border-radius: 3px 3px 0 0 !important;
+  border: 2px solid #0c1017 !important;
+  border-bottom: none !important;
+}
+
+.react-tabs__tab--selected {
+  background: #344865 !important;
+  color: #f8c838 !important;
+}
+
+input[type="text"],
+input[type="search"],
+select {
+  border-radius: 3px !important;
+  border: 2px solid #0c1017 !important;
+  background-color: #161e2b !important;
+  color: #f8f8f8 !important;
+  font-family: PokemonClassic, monospace !important;
+  font-size: 11px !important;
+}
