@@ -5,6 +5,7 @@ import { GADGETS } from "./gadgets"
 
 export const THEMES = [
   "default",
+  "gba",
   "super",
   "lilac",
   "rainbow",
